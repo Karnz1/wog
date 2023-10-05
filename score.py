@@ -12,8 +12,4 @@ def add_score(difficulty):
     else:
         score_to_add += points_of_winning
     with open('Scores.txt', 'w') as f:
-        print(score_to_add)
         f.write(str(score_to_add))
-
-
-add_score(1)

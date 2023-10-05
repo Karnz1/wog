@@ -16,6 +16,7 @@ def get_list_from_user(difficulty, generated_numbers):
     for j in range(difficulty):
         print(generated_numbers[j], end=" ")
     time.sleep(0.7)
+    # clear screen
     Utils.screen_cleaner()
     # get user's guess
     arr = []

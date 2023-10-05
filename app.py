@@ -1,4 +1,4 @@
-import memory_game, currency_roulette_game, guess_game
+import memory_game, currency_roulette_game, guess_game, score
 
 
 def welcome():
@@ -6,7 +6,7 @@ def welcome():
     print(f'Hi {name} and welcome to the World of Games: The Epic Journey')
 
 
-def match_game(game, difficulty_level):
+def match_pick_to_game(game, difficulty_level):
     if game == 1:
         return memory_game.play(difficulty_level)
     elif game == 2:
@@ -41,12 +41,16 @@ def start_play():
             break
         print("try again")
 
-    game_result = match_game(game_to_play, difficulty_level)
+    game_result = match_pick_to_game(game_to_play, difficulty_level)
+    if game_result:
+        score.add_score(difficulty_level)
 
     while True:
         replay_game = input("would you like to replay the game? yes/no")
         if replay_game.upper() == 'YES':
-            game_result = match_game(game_to_play, difficulty_level)
+            game_result = match_pick_to_game(game_to_play, difficulty_level)
+            if game_result:
+                score.add_score(difficulty_level)
         else:
             return game_result
 
