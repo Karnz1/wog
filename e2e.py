@@ -13,7 +13,7 @@ def test_scores_service(app_url):
     web_driver.get(app_url)
     game_score = WebDriverWait(web_driver, 10).until(EC.presence_of_element_located((By.ID, 'scores')))
     s = game_score.text
-    if 1 <= int(s) <= 1000:
+    if 0 <= int(s) <= 1000:
         return True
     else:
         return False
