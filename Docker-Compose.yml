@@ -3,4 +3,4 @@ services:
   scores:
     image: scores:latest
     ports:
-      - 3000:3000
+      - 8777:8777
