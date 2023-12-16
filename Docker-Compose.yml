@@ -1,4 +1,5 @@
 version: '3.8'
+name: "scores"
 services:
   scores:
     image: scores:latest

@@ -19,12 +19,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Deploying....'
+                sh 'python e2e.py'
             }
         }
         stage('Finalize') {
             steps {
-                echo 'Deploying....'
+                sh 'docker rm -f scores-scores-1'
+                sh 'git push'
             }
         }
     }
