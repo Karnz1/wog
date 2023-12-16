@@ -28,4 +28,5 @@ def main_function(app_url):
         return sys.exit("-1")
 
 
-main_function("http://localhost:5000")
+main_function("http://localhost:8777")
+
