@@ -14,4 +14,4 @@ def score_server():
         return render_template('index.html', score="Error opening scores file")
 
 
-app.run(host='127.0.0.1', debug=True, port=5000)
+app.run(host='127.0.0.1', debug=True, port=3000)
