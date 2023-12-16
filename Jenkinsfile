@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Karnz1/wog.git'
             }
         }
         stage('Build') {
             steps {
-                echo 'Testing..'
+                sh 'docker build -t scores:latest .'
             }
         }
         stage('Run') {
             steps {
-                echo 'Deploying....'
+                sh 'docker-compose up -d'
             }
         }
         stage('Test') {
